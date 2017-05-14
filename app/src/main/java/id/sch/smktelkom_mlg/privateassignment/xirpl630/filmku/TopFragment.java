@@ -1,4 +1,4 @@
-package id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.service;
+package id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,10 +16,11 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.R;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.adapter.PopularAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.model.Result;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.model.SourcesResponse;
+import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.service.GsonGetRequest;
+import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.service.VolleySingleton;
 
 /**
  * Created by ASUS on 5/14/2017.

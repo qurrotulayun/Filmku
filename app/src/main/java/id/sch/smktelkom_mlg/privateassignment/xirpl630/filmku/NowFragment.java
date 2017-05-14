@@ -1,4 +1,4 @@
-package id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.service;
+package id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,10 +16,11 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.R;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.adapter.PopularAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.model.Result;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.model.SourcesResponse;
+import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.service.GsonGetRequest;
+import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.service.VolleySingleton;
 
 /**
  * Created by ASUS on 5/14/2017.
@@ -54,7 +55,7 @@ public class NowFragment extends Fragment {
     }
 
     private void downloadDataSources() {
-        String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=1f422a94af264bfeea28e3d6fa8ca2df";
+        String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=a085237aa0a78b726ae808bb7eeda49f";
 
         GsonGetRequest<SourcesResponse> myRequest = new GsonGetRequest<SourcesResponse>
                 (url, SourcesResponse.class, null, new Response.Listener<SourcesResponse>() {

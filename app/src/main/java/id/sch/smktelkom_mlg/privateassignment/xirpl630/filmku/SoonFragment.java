@@ -1,4 +1,4 @@
-package id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.service;
+package id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku;
 
 
 import android.os.Bundle;
@@ -17,10 +17,11 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.R;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.adapter.ComingSoonAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.model.Result;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.model.SourcesResponse;
+import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.service.GsonGetRequest;
+import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.service.VolleySingleton;
 
 /**
  * Created by ASUS on 5/14/2017.
@@ -55,7 +56,7 @@ public class SoonFragment extends Fragment {
     }
 
     private void downloadDataSources() {
-        String url = "https://api.themoviedb.org/3/movie/upcoming?api_key=6829fca4ab934e62e28700baf1dbe368";
+        String url = "https://api.themoviedb.org/3/movie/upcoming?api_key=a085237aa0a78b726ae808bb7eeda49f";
 
         GsonGetRequest<SourcesResponse> myRequest = new GsonGetRequest<SourcesResponse>
                 (url, SourcesResponse.class, null, new Response.Listener<SourcesResponse>() {
