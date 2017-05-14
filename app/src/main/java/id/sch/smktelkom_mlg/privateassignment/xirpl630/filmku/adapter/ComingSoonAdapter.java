@@ -15,9 +15,6 @@ import java.util.ArrayList;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.R;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.model.Result;
 
-/**
- * Created by ASUS on 5/14/2017.
- */
 
 public class ComingSoonAdapter extends RecyclerView.Adapter<ComingSoonAdapter.ViewHolder> {
     ArrayList<Result> list;
@@ -29,6 +26,7 @@ public class ComingSoonAdapter extends RecyclerView.Adapter<ComingSoonAdapter.Vi
         this.list = list;
         this.context = context;
         mIComingSoonAdapter = (ComingSoonAdapter.IComingSoonAdapter) context;
+
     }
 
     @Override
@@ -41,9 +39,11 @@ public class ComingSoonAdapter extends RecyclerView.Adapter<ComingSoonAdapter.Vi
 
     @Override
     public void onBindViewHolder(ComingSoonAdapter.ViewHolder holder, int position) {
+
         Result result = list.get(position);
         holder.tvName.setText(result.title);
         holder.tvDesc.setText(result.overview);
+
         Glide.with(context)
                 .load("http://image.tmdb.org/t/p/w500" + result.poster_path)
                 .into(holder.iv_poster);
@@ -64,6 +64,7 @@ public class ComingSoonAdapter extends RecyclerView.Adapter<ComingSoonAdapter.Vi
         ImageView iv_poster;
         TextView tvName;
         TextView tvDesc;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
