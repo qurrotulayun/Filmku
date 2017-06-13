@@ -7,6 +7,7 @@ NIS : 4806/1525.070<br>
 Angkatan : 24<br>
 SMK TELKOM Malang<br>
 # Alamat API : https://www.themoviedb.org/documentation/api
+# Library Database : SQLite Dasar
 # Jenis Navigation : Navigation Drawer
 # Deskripsi Singkat : 
 Aplikasi ini bernama FILMKU yang berisi tentang film film internasional yang sedang tayang, yang paling popular dan film film yang akanco tayang. 
