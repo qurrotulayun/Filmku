@@ -17,9 +17,20 @@ import android.view.MenuItem;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.adapter.ComingSoonAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.adapter.NowPlayingAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.adapter.PopularAdapter;
+import id.sch.smktelkom_mlg.privateassignment.xirpl630.filmku.sugar.FavoriteFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, PopularAdapter.ISourceAdapter, NowPlayingAdapter.INowPlayingAdapter, ComingSoonAdapter.IComingSoonAdapter {
+
+    public static final String RESULTPOSTER = "resultPoster";
+    public static final String RESULTOVER = "resultOverview";
+    public static final String RESULTRELEASE = "resultRelease";
+    public static final String RESULTTITLE = "resultTitle";
+    public static final String RESULTBACK = "resultBackdrop";
+    public static final String RESULTVOTE = "resultOver";
+    public static final String RESULTLANGUAGE = "resultLanguage";
+    public static final String RESULTPOPULARITY = "resultPopularity";
+    public static final String RESULTVOTECOUNT = "resultVote";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,7 +124,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
             fragment = new SoonFragment();
             setTitle("Soon Playing");
-
+        } else if (id == R.id.nav_fav) {
+            fragment = new FavoriteFragment();
+            setTitle("Favorite List");
         }
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, fragment).commitNow();
@@ -122,10 +135,19 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
     }
 
-
     @Override
-    public void showArticles(String title, String overview, String poster_path) {
-
+    public void showArticles(String poster_path, String overview, String release_date, String title, String backdrop_path, String vote_average, String original_language, String popularity, String vote_count) {
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(RESULTPOSTER, poster_path);
+        intent.putExtra(RESULTOVER, overview);
+        intent.putExtra(RESULTRELEASE, release_date);
+        intent.putExtra(RESULTTITLE, title);
+        intent.putExtra(RESULTBACK, backdrop_path);
+        intent.putExtra(RESULTVOTE, vote_average);
+        intent.putExtra(RESULTLANGUAGE, original_language);
+        intent.putExtra(RESULTPOPULARITY, popularity);
+        intent.putExtra(RESULTVOTECOUNT, vote_count);
+        startActivity(intent);
     }
 }
 
